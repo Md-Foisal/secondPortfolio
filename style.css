@@ -1,0 +1,189 @@
+* {
+    box-sizing: border-box;
+}
+html {
+    font-size: 62.5%;
+}
+figure {
+    margin: 0;
+    padding: 0;
+}
+p {
+    font: 1.6rem/2.5rem tahoma;
+    color: gray;
+    text-align: justify;
+}
+h1 {
+    font: 3rem arial;
+}
+a {
+    text-decoration: none;
+    display: inline-block;
+    padding: 1rem 4rem;
+    border-radius: .5rem;
+    background: linear-gradient(to right, #ec5195, #ed4b77);
+    font: 1.6rem tahoma;
+    color: white;
+}
+img {
+    width: 100%;
+    height: auto;
+}
+/**-----------------Layout structure-------------**/
+body{
+    margin: 80px 120px 5px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1.1fr 1.5fr .8fr;
+    grid-template-areas: 
+    "hdr"
+    "bgpy"
+    "mlw"
+    "ftr";
+}
+/**------------------HeaderSection------------**/
+.hdr {
+    grid-area: hdr;
+    background: url("img/header-bg.png") no-repeat;
+    background-size: cover;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: .4fr .6fr;
+    row-gap: 2rem;
+    grid-template-areas: 
+    "hdr_artcl"
+    "hdr_fgr";
+}
+.hdr_artcl {
+    grid-area: hdr_artcl;
+}
+.hdr_fgr {
+    grid-area: hdr_fgr;
+}
+.hdr_1 {
+    line-height: 0;
+}
+.hdr_2 {
+    color: #ec4c7a;
+    font: bold 5rem/6rem arial;
+}
+/**------------------Biography--------------**/
+.bgpy {
+    grid-area: bgpy;
+    background: url("img/biography-bg.png") no-repeat;
+    background-size: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: .6fr .4fr;
+    row-gap: 2rem;
+    grid-template-areas: 
+    "bgpy_fgr"
+    "bgpy_artcl";
+}
+.bgpy_artcl {
+    grid-area: bgpy_artcl;
+}
+.bgpy_fgr {
+    grid-area: bgpy_fgr;
+}
+/**----------------My Latest Work------------**/
+.mlw {
+    grid-area: mlw;
+    background: url("img/latest-work-bg.png") no-repeat;
+    background-size: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: .01fr .2fr .2fr .2fr;
+    row-gap: 2rem;
+    grid-template-areas: 
+    "mlw_ttl"
+    "mlw_fgr_1"
+    "mlw_fgr_2"
+    "mlw_fgr_3";
+}
+.mlw_ttl {
+    grid-area: mlw_ttl;
+    text-align: center;
+}
+.mlw_fgr_1 {
+    grid-area: mlw_fgr_1;
+}
+.mlw_fgr_2 {
+    grid-area: mlw_fgr_2;
+}
+.mlw_fgr_3 {
+    grid-area: mlw_fgr_3;
+}
+/**-----------footer-------------**/
+.ftr {
+    grid-area: ftr;
+    background: url("img/footer-bg.png") no-repeat;
+    background-size: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: .5fr .4fr .1fr;
+    row-gap: 2rem;
+    grid-template-areas: 
+    "ftr_artcl"
+    "ftr_sec"
+    "ftr_ftr";
+}
+.ftr_artcl {
+    grid-area: ftr_artcl;
+    text-align: center;
+    font: 1.5rem arial;
+}
+.ftr_artcl h1 {
+    line-height: 10rem;
+}
+.ftr_artcl p {
+    margin: 5rem 0;
+    text-align: center;
+}
+.ftr_sec {
+    grid-area: ftr_sec;
+    padding: 2rem;
+    border-radius: 1rem;
+    background: linear-gradient(to right, #ec5195, #ed4b77);
+    font: 1.6rem tahoma;
+    color: white;
+    text-align: center;
+}
+.ftr_sec p {
+    color: white;
+    font-size: 2.5rem;
+    text-align: center;
+}
+.ftr_ftr {
+    grid-area: ftr_ftr;
+    margin-top: 10rem;
+}
+.ftr_ftr p {
+    text-align: center;
+}
+@media screen and (min-width:768px) {
+    body {
+        grid-template-rows: 1fr 1.1fr .7fr .8fr;
+    }
+    .hdr {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 1fr;
+        grid-template-areas: 
+        "hdr_artcl hdr_fgr";
+    }
+    .bgpy {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 1fr;
+        column-gap: 2rem;
+        grid-template-areas: 
+        "bgpy_fgr bgpy_artcl";
+    }
+    .mlw {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: .1fr .9fr;
+        column-gap: 2rem;
+        grid-template-areas: 
+        "mlw_ttl mlw_ttl mlw_ttl"
+        "mlw_fgr_1 mlw_fgr_2 mlw_fgr_3";
+    }
+}
